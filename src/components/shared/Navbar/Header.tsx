@@ -11,6 +11,7 @@ import {
 import { MenuCategory, menuData } from '@/components/data/menuData'
 import { MegaMenu } from './MegaMenu'
 import { MobileMenu } from './MobileMenu'
+import Link from 'next/link';
 
 
 export function Header() {
@@ -21,10 +22,10 @@ export function Header() {
   return (
     <>
       <header
-        className="w-full bg-white border-b border-gray-200 relative z-40"
+        className="fixed top-0 left-0 w-full border-b border-gray-200 bg-white z-50"
         onMouseLeave={() => setActiveCategory(null)}
       >
-        <div className=" px-4 sm:px-6 lg:px-8">
+        <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Mobile: Hamburger & Logo Container */}
             <div className="flex items-center lg:hidden flex-1">
@@ -39,14 +40,14 @@ export function Header() {
 
             {/* Logo */}
             <div className="flex-shrink-0 -ml-30 md:ml-0 flex items-start justify-start lg:justify-start flex-1 lg:flex-none">
-              <a
+              <Link
                 href="/"
                 className="flex flex-col items-center lg:items-start group"
               >
                 <span className="text-3xl font-extrabold tracking-tighter text-[#E8731A] leading-none">
                   Tugi Bugi
                 </span>
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
