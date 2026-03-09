@@ -1,3 +1,5 @@
+import { CategorySection } from "@/components/modules/home/category/CategorySection";
+import HomeSlider from "@/components/modules/home/category/HomeSlider";
 import { HeroSlider } from "@/components/modules/home/hero/HeroSlider";
 import Head from "next/head";
 
@@ -15,6 +17,8 @@ export default function Home() {
       </Head>
       <main>
         <HeroSlider />
+        <CategorySection/>
+        <HomeSlider/>
       </main>
     </>
   );
