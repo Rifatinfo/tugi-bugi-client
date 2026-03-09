@@ -1,6 +1,10 @@
-import { CategorySection } from "@/components/modules/home/category/CategorySection";
-import HomeSlider from "@/components/modules/home/category/HomeSlider";
-import { HeroSlider } from "@/components/modules/home/hero/HeroSlider";
+
+import { CategorySection } from "@/components/modules/Home/category/CategorySection";
+import { FeaturedCategories } from "@/components/modules/Home/category/FeaturedCategories";
+import HomeSlider from "@/components/modules/Home/category/HomeSlider";
+import { EidCollectionSlider } from "@/components/modules/Home/collection/EidCollectionSlider";
+import { HeroSlider } from "@/components/modules/Home/hero/HeroSlider";
+
 import Head from "next/head";
 
 export default function Home() {
@@ -19,6 +23,8 @@ export default function Home() {
         <HeroSlider />
         <CategorySection/>
         <HomeSlider/>
+        <FeaturedCategories/>
+        <EidCollectionSlider/>
       </main>
     </>
   );
