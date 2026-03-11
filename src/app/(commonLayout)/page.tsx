@@ -3,6 +3,7 @@ import { CategorySection } from "@/components/modules/Home/category/CategorySect
 import { FeaturedCategories } from "@/components/modules/Home/category/FeaturedCategories";
 import HomeSlider from "@/components/modules/Home/category/HomeSlider";
 import { EidCollectionSlider } from "@/components/modules/Home/collection/EidCollectionSlider";
+import { DiscoverSection } from "@/components/modules/Home/DiscoverProduct/DiscoverSection";
 import { HeroSlider } from "@/components/modules/Home/hero/HeroSlider";
 
 import Head from "next/head";
@@ -22,9 +23,10 @@ export default function Home() {
       <main>
         <HeroSlider />
         <CategorySection/>
-        <HomeSlider/>
         <FeaturedCategories/>
+        <HomeSlider/>
         <EidCollectionSlider/>
+        <DiscoverSection/>
       </main>
     </>
   );
