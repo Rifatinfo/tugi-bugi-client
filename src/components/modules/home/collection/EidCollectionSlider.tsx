@@ -53,10 +53,10 @@ export function EidCollectionSlider() {
   }, [goToNext])
   const currentSlide = collectionSlides[currentIndex]
   return (
-    <section className="relative w-full aspect-[16/7] md:aspect-[16/6] overflow-hidden bg-neutral-900">
+    <section className="relative w-full aspect-[16/7] md:aspect-[16/6] overflow-hidden bg-neutral-900 h-[632px] md:h-full">
       {/* Previous slide underneath for seamless crossfade */}
       <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 w-full  h-full bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${collectionSlides[prevIndex].image})`,
         }}
