@@ -12,6 +12,7 @@ import { MenuCategory, menuData } from '@/components/data/menuData'
 import { MegaMenu } from './MegaMenu'
 import { MobileMenu } from './MobileMenu'
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 export function Header() {
@@ -44,9 +45,7 @@ export function Header() {
                 href="/"
                 className="flex flex-col items-center lg:items-start group"
               >
-                <span className="text-3xl font-extrabold tracking-tighter text-[#E8731A] leading-none">
-                  Tugi Bugi
-                </span>
+                <Image src="https://res.cloudinary.com/dgp5rqeqh/image/upload/v1773219843/Untitled_design__1_-removebg-preview_vkj6ii.png" alt='miShop' height={150} width={150} />
               </Link>
             </div>
 

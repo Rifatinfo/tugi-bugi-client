@@ -5,6 +5,7 @@ import HomeSlider from "@/components/modules/Home/category/HomeSlider";
 import { EidCollectionSlider } from "@/components/modules/Home/collection/EidCollectionSlider";
 import { DiscoverSection } from "@/components/modules/Home/DiscoverProduct/DiscoverSection";
 import { HeroSlider } from "@/components/modules/Home/hero/HeroSlider";
+import ProductDetails from "@/components/modules/ProductDetails/ProductDetails";
 
 import Head from "next/head";
 
@@ -27,6 +28,7 @@ export default function Home() {
         <HomeSlider/>
         <EidCollectionSlider/>
         <DiscoverSection/>
+        <ProductDetails/>
       </main>
     </>
   );
