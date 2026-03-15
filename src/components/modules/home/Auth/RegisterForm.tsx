@@ -35,10 +35,7 @@ const RegisterForm = () => {
     const [errors, setErrors] = useState<FormErrors>({})
     const [showPassword, setShowPassword] = useState(false)
 
-    const [state, formAction, isPending] = useActionState<ActionState, FormData>(
-        registerUser,
-        null
-    )
+  const [state, formAction, isPending] = useActionState(registerUser, null);
 
     const [isLoading, setIsLoading] = useState(false)
 
@@ -62,50 +59,7 @@ const RegisterForm = () => {
 
     }, [state, isPending])
 
-    const updateField = (field: string, value: string) => {
 
-        setForm(prev => ({
-            ...prev,
-            [field]: value
-        }))
-
-        setErrors(prev => ({
-            ...prev,
-            [field]: ""
-        }))
-    }
-
-    const validate = () => {
-
-        const newErrors: FormErrors = {}
-
-        if (!form.name.trim())
-            newErrors.name = "Full name required"
-
-        if (!form.email)
-            newErrors.email = "Email required"
-        else if (!/\S+@\S+\.\S+/.test(form.email))
-            newErrors.email = "Enter valid email"
-
-        if (!form.password)
-            newErrors.password = "Password required"
-        else if (form.password.length < 6)
-            newErrors.password = "Minimum 6 characters"
-
-        if (form.confirmPassword !== form.password)
-            newErrors.confirmPassword = "Passwords not match"
-
-        setErrors(newErrors)
-
-        return Object.keys(newErrors).length === 0
-    }
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-
-        if (!validate()) {
-            e.preventDefault()
-        }
-    }
 
     return (
         <motion.div
@@ -125,7 +79,7 @@ const RegisterForm = () => {
                 </p>
             </div>
 
-            <form action={formAction} onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <form action={formAction}  className="flex flex-col gap-5">
 
                 {/* Name */}
                 <div className="space-y-2">
@@ -134,12 +88,10 @@ const RegisterForm = () => {
                     <Input
                         name="name"
                         type="text"
-                        placeholder="Enter your full name"
-                        value={form.name}
-                        onChange={(e) => updateField("name", e.target.value)}
+                        placeholder="Enter your full name"    
                         className={`w-full px-4 py-6 rounded-lg border text-sm focus:outline-none focus:ring-2 transition-all ${errors.name
-                                ? "border-red-300 focus:ring-red-200"
-                                : "border-gray-200 focus:ring-[#E8731A]/20 focus:border-[#E8731A]"
+                            ? "border-red-300 focus:ring-red-200"
+                            : "border-gray-200 focus:ring-[#E8731A]/20 focus:border-[#E8731A]"
                             }`}
                     />
 
@@ -156,11 +108,9 @@ const RegisterForm = () => {
                         name="email"
                         type="email"
                         placeholder="you@example.com"
-                        value={form.email}
-                        onChange={(e) => updateField("email", e.target.value)}
                         className={`w-full px-4 py-6 rounded-lg border text-sm focus:outline-none focus:ring-2 transition-all ${errors.email
-                                ? "border-red-300 focus:ring-red-200"
-                                : "border-gray-200 focus:ring-[#E8731A]/20 focus:border-[#E8731A]"
+                            ? "border-red-300 focus:ring-red-200"
+                            : "border-gray-200 focus:ring-[#E8731A]/20 focus:border-[#E8731A]"
                             }`}
                     />
 
@@ -178,11 +128,9 @@ const RegisterForm = () => {
                             name="password"
                             type={showPassword ? "text" : "password"}
                             placeholder="Create password"
-                            value={form.password}
-                            onChange={(e) => updateField("password", e.target.value)}
                             className={`w-full px-4 py-6 pr-11 rounded-lg border text-sm focus:outline-none focus:ring-2 transition-all ${errors.password
-                                    ? "border-red-300 focus:ring-red-200"
-                                    : "border-gray-200 focus:ring-[#E8731A]/20 focus:border-[#E8731A]"
+                                ? "border-red-300 focus:ring-red-200"
+                                : "border-gray-200 focus:ring-[#E8731A]/20 focus:border-[#E8731A]"
                                 }`}
                         />
 
@@ -210,11 +158,10 @@ const RegisterForm = () => {
                         name="confirmPassword"
                         type="password"
                         placeholder="Confirm password"
-                        value={form.confirmPassword}
-                        onChange={(e) => updateField("confirmPassword", e.target.value)}
+                        
                         className={`w-full px-4 py-6 rounded-lg border text-sm focus:outline-none focus:ring-2 transition-all ${errors.confirmPassword
-                                ? "border-red-300 focus:ring-red-200"
-                                : "border-gray-200 focus:ring-[#E8731A]/20 focus:border-[#E8731A]"
+                            ? "border-red-300 focus:ring-red-200"
+                            : "border-gray-200 focus:ring-[#E8731A]/20 focus:border-[#E8731A]"
                             }`}
                     />
 
@@ -263,7 +210,6 @@ const RegisterForm = () => {
                     </svg>
                     Google
                 </button>
-
             </form>
         </motion.div>
     )
